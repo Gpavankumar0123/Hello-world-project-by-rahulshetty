@@ -41,3 +41,14 @@ stages:
             appType: 'webAppLinux'
             WebAppName: 'pavanapp12z'
             packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.war'
+  - stage: Prod
+    jobs:
+      - job: Prodjob
+        steps:
+        - task: AzureRmWebAppDeployment@4
+          inputs:
+            ConnectionType: 'AzureRM'
+            azureSubscription: 'Azure subscription 1(a338313a-fcff-49d7-9465-1f6415a88266)'
+            appType: 'webAppLinux'
+            WebAppName: 'pavan12'
+            packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.war'
